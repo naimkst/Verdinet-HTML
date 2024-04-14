@@ -1,0 +1,947 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Shopping Cart - Verdinet</title>
+    <!-- Styling -->
+    <link href="https://dcim.verdinet.net:8888/assets/fonts/css/open-sans-family.css" rel="stylesheet"
+        type="text/css" />
+    <link href="https://dcim.verdinet.net:8888/templates/twenty-one/css/all.min.css?v=95893e" rel="stylesheet">
+    <link href="https://dcim.verdinet.net:8888/templates/twenty-one/css/theme.min.css?v=95893e" rel="stylesheet">
+    <link href="https://dcim.verdinet.net:8888/assets/css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css" rel="stylesheet"
+        type="text/css" />
+    <link href="https://cdn.staticaly.com/gh/hung1001/font-awesome-pro/4cac1a6/css/all.css" rel="stylesheet"
+        type="text/css" />
+    <link href="https://rawcdn.githack.com/hung1001/font-awesome-pro/4cac1a6/css/all.css" rel="stylesheet"
+        type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap"
+        rel="stylesheet">
+
+    <script>
+        var csrfToken = '2875f312c9e1704a63e766cfb11fe510740b88b9',
+            markdownGuide = 'Markdown Guide',
+            locale = 'en',
+            saved = 'saved',
+            saving = 'autosaving',
+            whmcsBaseUrl = "",
+            requiredText = 'Required',
+            recaptchaSiteKey = "";
+    </script>
+    <script src="https://dcim.verdinet.net:8888/templates/twenty-one/js/scripts.min.js?v=95893e"></script>
+
+    <link
+        href="https://dcim.verdinet.net:8888/modules/servers/EasyDCIMv2/app/UI/Client/Templates/assets/css/hooks/sidebar.css"
+        rel="stylesheet" type="text/css" />
+    <style>
+        .ml-auto,
+        .mx-auto {
+            margin-left: auto !important;
+            margin-bottom: 0;
+        }
+
+        .navbar.navbar-light ul li:hover ul.dropdown-menu {
+            display: block !important;
+            position: absolute !important;
+        }
+
+        .navbar.navbar-light {
+            background: #050c36 !important;
+        }
+
+        a.navbar-brand.mr-3 {
+            color: #fff !important;
+            font-size: 20px;
+        }
+
+        header.header .toolbar .nav-link {
+            color: #fff !important;
+        }
+
+        #nav li a {
+            color: #fff !important;
+            font-family: "Jost", sans-serif;
+        }
+
+        li#Secondary_Navbar-Account a.dropdown-toggle {
+            font-family: "Russo One", Sans-serif;
+            font-size: 15px;
+            color: #ffe632 !important;
+        }
+
+        li#Secondary_Navbar-Account a.dropdown-toggle:hover {
+            color: #6cba22 !important;
+        }
+
+        #nav li a:hover {
+            text-decoration: none !important;
+            color: #ffe632 !important;
+        }
+
+        #nav li .dropdown-menu a {
+            color: #050c36 !important
+        }
+
+        ul.dropdown-menu {
+            border: none;
+            position: absolute !important;
+        }
+
+        .navbar.navbar-expand-xl.main-navbar-wrapper {
+            background: #050c36 !important;
+        }
+
+        .dropdown-divider {
+            display: none;
+        }
+
+        /* Start dedicated servers css code here */
+        .serverHeadline {
+            font-family: "Russo One", sans-serif;
+            font-size: 50px !important;
+
+        }
+
+        .top-area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .top-area,
+        .price-area {
+            background: #050c36;
+            color: #fff !important;
+            font-family: "Jost", sans-serif !important;
+            padding: 10px !important;
+            min-height: 80px;
+        }
+
+        footer#footer {
+            background: #050c36;
+        }
+
+
+
+        @media only screen and (min-width:1200px) {
+
+            form.form-inline.ml-auto {
+                display: none;
+            }
+
+            ul.navbar-nav.toolbar {
+                display: none;
+            }
+
+            div#mainNavbar {
+                display: block !important;
+            }
+
+            ul#nav {
+                flex-direction: row;
+                margin-left: auto;
+                margin-right: 0 !important;
+            }
+
+            .navbar.navbar-expand-xl.main-navbar-wrapper {
+                display: none;
+            }
+
+            .navbar-expand-xl .navbar-nav .dropdown-menu {
+                position: absolute;
+            }
+        }
+
+        @media only screen and (max-width:1199px) {
+            .navbar.navbar-light #nav {
+                display: none;
+            }
+
+            ul.dropdown-menu {
+                background: transparent !important;
+                position: unset !important;
+            }
+
+            #nav li ul.dropdown-menu li a {
+                color: #fff !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="primary-bg-color" data-phone-cc-input="1">
+
+
+    <header id="header" class="header">
+
+        <div class="navbar navbar-light">
+            <div class="container">
+                <a class="navbar-brand mr-3" href="/index.php">
+                    Verdinet
+                </a>
+
+                <form method="post" action="https://dcim.verdinet.net:8888/index.php?rp=/knowledgebase/search"
+                    class="form-inline ml-auto">
+                    <input type="hidden" name="token" value="78a44627b3e5735cfab5ebf13277fb8ebaace320">
+                    <div class="input-group search d-none d-xl-flex">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-default" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        <input class="form-control appended-form-control font-weight-light" type="text" name="search"
+                            placeholder="Search our knowledgebase...">
+                    </div>
+                </form>
+                <ul id="nav" class="navbar-nav mr-auto">
+                    <li menuitemname="Home" class="d-block no-collapse" id="Primary_Navbar-Home">
+                        <a class="pr-4" href="https://dcim.verdinet.net:8888/index.php">
+                            Home
+                        </a>
+                    </li>
+                    <li menuitemname="Store" class="d-block dropdown no-collapse" id="Primary_Navbar-Store">
+                        <a class="pr-4 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false" href="#">
+                            Store
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li menuitemname="Browse Products Services" class="dropdown-item"
+                                id="Primary_Navbar-Store-Browse_Products_Services">
+                                <a href="https://dcim.verdinet.net:8888/index.php?rp=/store"
+                                    class="dropdown-item px-2 py-0">
+                                    Browse All
+                                </a>
+                            </li>
+                            <div class="dropdown-divider"></div>
+                            <li menuitemname="Dedicated Servers" class="dropdown-item"
+                                id="Primary_Navbar-Store-Dedicated_Servers">
+                                <a href="https://dcim.verdinet.net:8888/index.php?rp=/store/dedicated-servers"
+                                    class="dropdown-item px-2 py-0">
+                                    Dedicated Servers
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li menuitemname="Announcements" class="d-block" id="Primary_Navbar-Announcements">
+                        <a class="pr-4" href="/index.php?rp=/announcements">
+                            Announcements
+                        </a>
+                    </li>
+                    <li menuitemname="Knowledgebase" class="d-block" id="Primary_Navbar-Knowledgebase">
+                        <a class="pr-4" href="/index.php?rp=/knowledgebase">
+                            Knowledgebase
+                        </a>
+                    </li>
+                    <li menuitemname="Network Status" class="d-block" id="Primary_Navbar-Network_Status">
+                        <a class="pr-4" href="/serverstatus.php">
+                            Network Status
+                        </a>
+                    </li>
+                    <li menuitemname="Contact Us" class="d-block" id="Primary_Navbar-Contact_Us">
+                        <a class="pr-4" href="/contact.php">
+                            Contact Us
+                        </a>
+                    </li>
+                    <li menuitemname="Account" class="d-block no-collapse dropdown no-collapse"
+                        id="Secondary_Navbar-Account">
+                        <a class=" dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            href="#">
+                            Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li menuitemname="Login" class="dropdown-item" id="Secondary_Navbar-Account-Login">
+                                <a href="/clientarea.php" class="dropdown-item px-2 py-0">
+                                    Login
+                                </a>
+                            </li>
+                            <li menuitemname="Register" class="dropdown-item" id="Secondary_Navbar-Account-Register">
+                                <a href="/register.php" class="dropdown-item px-2 py-0">
+                                    Register
+                                </a>
+                            </li>
+                            <div class="dropdown-divider"></div>
+                            <li menuitemname="Forgot Password?" class="dropdown-item"
+                                id="Secondary_Navbar-Account-Forgot_Password?">
+                                <a href="/index.php?rp=/password/reset" class="dropdown-item px-2 py-0">
+                                    Forgot Password?
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="d-none dropdown collapsable-dropdown">
+                        <a class="dropdown-toggle" href="#" id="navbarDropdownMenu" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="collapsable-dropdown-menu dropdown-menu" aria-labelledby="navbarDropdownMenu">
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="navbar-nav toolbar">
+                    <li class="nav-item ml-3">
+                        <a class="btn nav-link cart-btn" href="/cart.php?a=view">
+                            <i class="far fa-shopping-cart fa-fw"></i>
+                            <span id="cartItemCount" class="badge badge-info">0</span>
+                            <span class="sr-only">Shopping Cart</span>
+                        </a>
+                    </li>
+                    <li class="nav-item ml-3 d-xl-none">
+                        <button class="btn nav-link" type="button" data-toggle="collapse" data-target="#mainNavbar">
+                            <span class="fas fa-bars fa-fw"></span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="navbar navbar-expand-xl main-navbar-wrapper">
+            <div class="container">
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <form method="post" action="/index.php?rp=/knowledgebase/search" class="d-xl-none">
+                        <input type="hidden" name="token" value="78a44627b3e5735cfab5ebf13277fb8ebaace320">
+                        <div class="input-group search w-100 mb-2">
+                            <div class="input-group-prepend">
+                                <button class="btn btn-default" type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                            <input class="form-control prepended-form-control" type="text" name="search"
+                                placeholder="Search our knowledgebase...">
+                        </div>
+                    </form>
+                    <ul id="nav" class="navbar-nav mr-auto">
+                        <li menuitemname="Home" class="d-block no-collapse" id="Primary_Navbar-Home">
+                            <a class="pr-4" href="https://dcim.verdinet.net:8888/index.php">
+                                Home
+                            </a>
+                        </li>
+                        <li menuitemname="Store" class="d-block dropdown no-collapse" id="Primary_Navbar-Store">
+                            <a class="pr-4 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false" href="#">
+                                Store
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li menuitemname="Browse Products Services" class="dropdown-item"
+                                    id="Primary_Navbar-Store-Browse_Products_Services">
+                                    <a href="https://dcim.verdinet.net:8888/index.php?rp=/store"
+                                        class="dropdown-item px-2 py-0">
+                                        Browse All
+                                    </a>
+                                </li>
+                                <div class="dropdown-divider"></div>
+                                <li menuitemname="Dedicated Servers" class="dropdown-item"
+                                    id="Primary_Navbar-Store-Dedicated_Servers">
+                                    <a href="https://dcim.verdinet.net:8888/index.php?rp=/store/dedicated-servers"
+                                        class="dropdown-item px-2 py-0">
+                                        Dedicated Servers
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li menuitemname="Announcements" class="d-block" id="Primary_Navbar-Announcements">
+                            <a class="pr-4" href="/index.php?rp=/announcements">
+                                Announcements
+                            </a>
+                        </li>
+                        <li menuitemname="Knowledgebase" class="d-block" id="Primary_Navbar-Knowledgebase">
+                            <a class="pr-4" href="/index.php?rp=/knowledgebase">
+                                Knowledgebase
+                            </a>
+                        </li>
+                        <li menuitemname="Network Status" class="d-block" id="Primary_Navbar-Network_Status">
+                            <a class="pr-4" href="/serverstatus.php">
+                                Network Status
+                            </a>
+                        </li>
+                        <li menuitemname="Contact Us" class="d-block" id="Primary_Navbar-Contact_Us">
+                            <a class="pr-4" href="/contact.php">
+                                Contact Us
+                            </a>
+                        </li>
+                        <li class="d-none dropdown collapsable-dropdown">
+                            <a class="dropdown-toggle" href="#" id="navbarDropdownMenu" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                More
+                            </a>
+                            <ul class="collapsable-dropdown-menu dropdown-menu" aria-labelledby="navbarDropdownMenu">
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li menuitemname="Account" class="d-block no-collapse dropdown no-collapse"
+                            id="Secondary_Navbar-Account">
+                            <a class=" dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false" href="#">
+                                Account
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li menuitemname="Login" class="dropdown-item" id="Secondary_Navbar-Account-Login">
+                                    <a href="/clientarea.php" class="dropdown-item px-2 py-0">
+                                        Login
+                                    </a>
+                                </li>
+                                <li menuitemname="Register" class="dropdown-item"
+                                    id="Secondary_Navbar-Account-Register">
+                                    <a href="/register.php" class="dropdown-item px-2 py-0">
+                                        Register
+                                    </a>
+                                </li>
+                                <div class="dropdown-divider"></div>
+                                <li menuitemname="Forgot Password?" class="dropdown-item"
+                                    id="Secondary_Navbar-Account-Forgot_Password?">
+                                    <a href="/index.php?rp=/password/reset" class="dropdown-item px-2 py-0">
+                                        Forgot Password?
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <nav class="master-breadcrumb" aria-label="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active" aria-current="page">
+                    Shopping Cart
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+
+
+    <section id="main-body">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 primary-content">
+
+
+                    <!-- Product Recommendations CSS -->
+                    <link type="text/css" rel="stylesheet"
+                        href="https://dcim.verdinet.net:8888/assets/css/recommendations.min.css"
+                        property="stylesheet" />
+                    <!-- Core CSS -->
+                    <link rel="stylesheet" type="text/css"
+                        href="https://dcim.verdinet.net:8888/templates/orderforms/premium_comparison/css/style.css"
+                        property="stylesheet" />
+                    <script>
+                        jQuery(document).ready(function () {
+                            jQuery('#btnShowSidebar').click(function () {
+                                if (jQuery(".product-selection-sidebar").is(":visible")) {
+                                    jQuery('.row-product-selection').css('left', '0');
+                                    jQuery('.product-selection-sidebar').fadeOut();
+                                    jQuery('#btnShowSidebar').html('<i class="fas fa-arrow-circle-right"></i> Show Menu');
+                                } else {
+                                    jQuery('.product-selection-sidebar').fadeIn();
+                                    jQuery('.row-product-selection').css('left', '300px');
+                                    jQuery('#btnShowSidebar').html('<i class="fas fa-arrow-circle-left"></i> Hide Menu');
+                                }
+                            });
+                        });
+                    </script>
+
+                    <button type="button" class="btn btn-default btn-sm" id="btnShowSidebar">
+                        <i class="fas fa-arrow-circle-right"></i>
+                        Show Menu
+                    </button>
+
+                    <div class="row row-product-selection">
+                        <div class="col-md-3 sidebar product-selection-sidebar" id="premiumComparisonSidebar">
+                            <div menuItemName="Categories" class="panel card card-sidebar mb-3 panel-sidebar">
+                                <div class="panel-heading card-header">
+                                    <h3 class="panel-title">
+                                        <i class="fas fa-shopping-cart"></i>&nbsp;
+
+                                        Categories
+
+
+                                        <i
+                                            class="fas fa-chevron-up card-minimise panel-minimise pull-right float-right"></i>
+                                    </h3>
+                                </div>
+
+
+                                <div class="list-group collapsable-card-body">
+                                    <a menuItemName="Dedicated Servers" href="/index.php?rp=/store/dedicated-servers"
+                                        class="list-group-item list-group-item-action active"
+                                        id="Secondary_Sidebar-Categories-Dedicated_Servers">
+
+                                        Dedicated Servers
+
+                                    </a>
+                                </div>
+
+                            </div>
+
+                            <div menuItemName="Actions" class="panel card card-sidebar mb-3 panel-sidebar">
+                                <div class="panel-heading card-header">
+                                    <h3 class="panel-title">
+                                        <i class="fas fa-plus"></i>&nbsp;
+
+                                        Actions
+
+
+                                        <i
+                                            class="fas fa-chevron-up card-minimise panel-minimise pull-right float-right"></i>
+                                    </h3>
+                                </div>
+
+
+                                <div class="list-group collapsable-card-body">
+                                    <a menuItemName="View Cart" href="/cart.php?a=view"
+                                        class="list-group-item list-group-item-action"
+                                        id="Secondary_Sidebar-Actions-View_Cart">
+                                        <i class="fas fa-shopping-cart fa-fw"></i>&nbsp;
+
+                                        View Cart
+
+                                    </a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-12">
+
+                            <div id="order-premium_comparison">
+                                <div class="main-container price-01">
+                                    <div class="txt-center">
+                                        <h3 id="headline" class="font-size-24 serverHeadline">
+                                            Dedicated Servers
+                                        </h3>
+                                    </div>
+                                    <div id="products" class="price-table-container">
+                                        <ul>
+                                            <li id="product1">
+                                                <div class="price-table">
+                                                    <div class="top-head">
+                                                        <div class="top-area">
+                                                            <h4 id="product1-name">Dedicated Servers</h4>
+                                                        </div>
+
+                                                        <div class="price-area">
+                                                            <div class="price" id="product1-price">
+                                                                From
+                                                                <span>$100.00</span>/mo
+                                                                <br>
+                                                                <small>$25.00 Setup Fee</small>
+                                                            </div>
+                                                            <a href="/index.php?rp=/store/dedicated-servers/dedicated-servers"
+                                                                class="order-button" id="product1-order-button">
+                                                                Order Now
+                                                            </a>
+
+                                                        </div>
+                                                    </div>
+                                                    <ul>
+                                                        <li id="product1-description">
+
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li id="product3">
+                                                <div class="price-table">
+                                                    <div class="top-head">
+                                                        <div class="top-area">
+                                                            <h4 id="product3-name">Inte Xeon CPU E5-2697 v3 @ 2.60GHz
+                                                            </h4>
+                                                        </div>
+
+                                                        <div class="price-area">
+                                                            <div class="price" id="product3-price">
+                                                                From
+                                                                <span>$200.00</span>/mo
+                                                                <br>
+                                                                <small>$20.00 Setup Fee</small>
+                                                            </div>
+                                                            <a href="/index.php?rp=/store/dedicated-servers/inte-xeon-cpu-e5-2697-v3-260ghz"
+                                                                class="order-button" id="product3-order-button">
+                                                                Order Now
+                                                            </a>
+
+                                                        </div>
+                                                    </div>
+                                                    <ul>
+                                                        <li id="product3-description">
+
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="recommendationsModal" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="float-left pull-left">
+                                        Added to Cart
+                                    </h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="product-recommendations-container">
+                                        <div class="product-recommendations">
+                                            <p>Based on this product, we recommend:</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a class="btn btn-primary" href="#" id="btnContinueRecommendationsModal"
+                                        data-dismiss="modal" role="button">
+                                        <span class="w-hidden hidden"><i
+                                                class="fas fa-spinner fa-spin"></i>&nbsp;</span>Continue
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-recommendation clonable w-hidden hidden">
+                            <div class="header">
+                                <div class="cta">
+                                    <div class="price">
+                                        <span class="w-hidden hidden">FREE!</span>
+                                        <span class="breakdown-price"></span>
+                                        <span class="setup-fee"><small>&nbsp;Setup Fee</small></span>
+                                    </div>
+                                    <button type="button" class="btn btn-sm btn-add">
+                                        <span class="text">Add to Cart</span>
+                                        <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+                                    </button>
+                                </div>
+                                <div class="expander">
+                                    <i class="fas fa-chevron-right rotate" data-toggle="tooltip" data-placement="right"
+                                        title="Click to learn more."></i>
+                                </div>
+                                <div class="content">
+                                    <div class="headline truncate"></div>
+                                    <div class="tagline truncate">
+                                        A description (tagline) is not available for this product.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="body clearfix">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script src="https://dcim.verdinet.net:8888/assets/js/whmcs/recommendations.min.js"></script>
+
+
+                </div>
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="footer">
+        <div class="container">
+            <ul class="list-inline mb-7 text-center float-lg-right">
+
+                <li class="list-inline-item">
+                    <button type="button" class="btn" data-toggle="modal" data-target="#modalChooseLanguage">
+                        <div class="d-inline-block align-middle">
+                            <div class="iti-flag us"></div>
+                        </div>
+                        English
+                        /
+                        $
+                        USD
+                    </button>
+                </li>
+            </ul>
+
+            <ul class="nav justify-content-center justify-content-lg-start mb-7">
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.php">
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+
+            <p class="copyright mb-0">
+                Copyright &copy; 2024 Verdinet. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <div id="fullpage-overlay" class="w-hidden">
+        <div class="outer-wrapper">
+            <div class="inner-wrapper">
+                <img src="https://dcim.verdinet.net:8888/assets/img/overlay-spinner.svg" alt="">
+                <br>
+                <span class="msg"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal system-modal fade" id="modalAjax" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Loading...
+                </div>
+                <div class="modal-footer">
+                    <div class="float-left loader">
+                        <i class="fas fa-circle-notch fa-spin"></i>
+                        Loading...
+                    </div>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary modal-submit">
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form method="get" action="/index.php?rp=%2Fstore%2Fdedicated-servers&">
+        <div class="modal modal-localisation" id="modalChooseLanguage" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+
+                        <h5 class="h5 pt-5 pb-3">Choose language</h5>
+                        <div class="row item-selector">
+                            <input type="hidden" name="language" data-current="english" value="english" />
+                            <div class="col-4">
+                                <a href="#" class="item" data-value="arabic">
+                                    العربية
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="item" data-value="azerbaijani">
+                                    Azerbaijani
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="item" data-value="catalan">
+                                    Català
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="item" data-value="chinese">
+                                    中文
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="item" data-value="croatian">
+                                    Hrvatski
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="item" data-value="czech">
+                                    Čeština
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="item" data-value="danish">
+                                    Dansk
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="item" data-value="dutch">
+                                    Nederlands
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="item active" data-value="english">
+                                    English
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="item" data-value="estonian">
+                                    Estonian
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="item" data-value="farsi">
+                                    Persian
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="item" data-value="french">
+                                    Français
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="item" data-value="german">
+                                    Deutsch
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="item" data-value="hebrew">
+                                    עברית
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="item" data-value="hungarian">
+                                    Magyar
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="item" data-value="italian">
+                                    Italiano
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="item" data-value="macedonian">
+                                    Macedonian
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="item" data-value="norwegian">
+                                    Norwegian
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="item" data-value="portuguese-br">
+                                    Português
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="item" data-value="portuguese-pt">
+                                    Português
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="item" data-value="romanian">
+                                    Română
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="item" data-value="russian">
+                                    Русский
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="item" data-value="spanish">
+                                    Español
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="item" data-value="swedish">
+                                    Svenska
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="item" data-value="turkish">
+                                    Türkçe
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#" class="item" data-value="ukranian">
+                                    Українська
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-default">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+    <form action="#" id="frmGeneratePassword">
+        <div class="modal fade" id="modalGeneratePassword">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                        <h4 class="modal-title">
+                            Generate Password
+                        </h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-danger w-hidden" id="generatePwLengthError">
+                            Please enter a number between 8 and 64 for the password length
+                        </div>
+                        <div class="form-group row">
+                            <label for="generatePwLength" class="col-sm-4 col-form-label">Password Length</label>
+                            <div class="col-sm-8">
+                                <input type="number" min="8" max="64" value="12" step="1"
+                                    class="form-control input-inline input-inline-100" id="inputGeneratePasswordLength">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="generatePwOutput" class="col-sm-4 col-form-label">Generated Password</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="inputGeneratePasswordOutput">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-8 offset-sm-4">
+                                <button type="submit" class="btn btn-default btn-sm">
+                                    <i class="fas fa-plus fa-fw"></i>
+                                    Generate new password
+                                </button>
+                                <button type="button" class="btn btn-default btn-sm copy-to-clipboard"
+                                    data-clipboard-target="#inputGeneratePasswordOutput">
+                                    <img src="/assets/img/clippy.svg" alt="Copy to clipboard" width="15">
+                                    Copy
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            Close
+                        </button>
+                        <button type="button" class="btn btn-primary" id="btnGeneratePasswordInsert"
+                            data-clipboard-target="#inputGeneratePasswordOutput">
+                            Copy to clipboard and Insert
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
+</body>
+
+</html>
