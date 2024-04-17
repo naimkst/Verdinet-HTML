@@ -530,7 +530,7 @@
                                         </h3>
                                     </div>
                                     <div>
-                                        <iframe seamless style="height: 586.6px; width: 100%; border: none;"
+                                        <iframe seamless style="height: 1900px; width: 100%; border: none;"
                                             src="https://verdinet.net/data-table">
                                         </iframe>
                                     </div>
@@ -963,5 +963,19 @@
 
 
 </body>
+
+
+
+<script>
+    window.addEventListener('DOMContentLoaded', function () {
+        var iframe = document.getElementById('myIframe');
+        iframe.style.height = window.innerHeight + 'px';
+
+        // Optional: Adjust iframe height on window resize
+        window.addEventListener('resize', function () {
+            iframe.style.height = window.innerHeight + 'px';
+        });
+    });
+</script>
 
 </html>
