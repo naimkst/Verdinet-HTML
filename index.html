@@ -136,6 +136,9 @@
             max-width: 1440px;
         }
 
+        .mobile {
+            display: none;
+        }
 
         @media only screen and (min-width:1200px) {
 
@@ -178,6 +181,14 @@
 
             #nav li ul.dropdown-menu li a {
                 color: #fff !important;
+            }
+
+            .desktop {
+                display: none;
+            }
+
+            .mobile {
+                display: block;
             }
         }
     </style>
@@ -529,9 +540,14 @@
                                             Our Instant Deploy Servers
                                         </h3>
                                     </div>
-                                    <div>
+                                    <div class="desktop">
                                         <iframe seamless scrolling="no"
                                             style="height: 560px; width: 100%; border: none;"
+                                            src="https://verdinet.net/data-table">
+                                        </iframe>
+                                    </div>
+                                    <div class="mobile">
+                                        <iframe seamless style="height: 770px; width: 100%; border: none;"
                                             src="https://verdinet.net/data-table">
                                         </iframe>
                                     </div>
