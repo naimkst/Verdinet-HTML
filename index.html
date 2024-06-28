@@ -541,9 +541,8 @@
                                         </h3>
                                     </div>
                                     <div class="desktop">
-                                        <iframe seamless scrolling="no"
-                                            style="height: 560px; width: 100%; border: none;"
-                                            src="https://verdinet.net/data-table">
+                                        <iframe id="myIframe" scrolling="no" onload="onloadFunction()"
+                                            style="width: 100%; border: none;" src="https://verdinet.net/data-table">
                                         </iframe>
                                     </div>
                                     <div class="mobile">
@@ -981,15 +980,26 @@
 
 
 <script>
-    window.addEventListener('DOMContentLoaded', function () {
-        var iframe = document.getElementById('myIframe');
-        iframe.style.height = window.innerHeight + 'px';
-
-        // Optional: Adjust iframe height on window resize
-        window.addEventListener('resize', function () {
-            iframe.style.height = window.innerHeight + 'px';
-        });
-    });
+    const iframe = document.getElementById('myIframe');
+    function onloadFunction() {
+        iframe.style.height = 560 + 'px';
+        function receiveMessage(event) {
+            // Ensure the message is from the expected origin
+            if (event.origin === 'https://verdinet.net') {
+                var iframeURL = event.data;
+                var pattern = /^https:\/\/verdinet\.net\/product\/.*$/;
+                if (pattern.test(iframeURL)) {
+                    iframe.style.height = 2040 + 'px'
+                    console.log('Yeessssss', iframeURL);
+                    // Add your custom logic here
+                } else {
+                    iframe.style.height = 600 + 'px';
+                }
+            }
+        }
+        // Add an event listener to receive the message from the iframe
+        window.addEventListener('message', receiveMessage, false);
+    }
 </script>
 
 </html>
