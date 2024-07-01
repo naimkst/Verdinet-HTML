@@ -987,13 +987,21 @@
             // Ensure the message is from the expected origin
             if (event.origin === 'https://verdinet.net') {
                 var iframeURL = event.data;
+
+                console.log("=======", iframeURL);
                 var pattern = /^https:\/\/verdinet\.net\/product\/.*$/;
                 if (pattern.test(iframeURL)) {
                     iframe.style.height = 2040 + 'px'
                     console.log('Yeessssss', iframeURL);
                     // Add your custom logic here
-                } else {
+                } if (iframeURL === 'https://verdinet.net/data-table/') {
                     iframe.style.height = 560 + 'px';
+                }
+                if (iframeURL === 'https://verdinet.net/cart/') {
+                    iframe.style.height = 1800 + 'px';
+                }
+                if (iframeURL === 'https://verdinet.net/checkout/') {
+                    iframe.style.height = 1800 + 'px';
                 }
             }
         }
